@@ -31,7 +31,7 @@ var NewGameFunction = function () {
 if (question === 'jonathan1') {
 	blankspaceArray = ['_','_','_','_','_','_','_','_'];
 	document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
-	document.getElementById("personimage").src="../images/mystery_person.jpg";
+	document.getElementById("personimage").src="assets/images/mystery_person.jpg";
 	document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
 	document.querySelector("#wins").innerHTML = "Wins: " + winCount;
 	document.querySelector("#losses").innerHTML = "Losses: " + lossCount;
@@ -45,7 +45,7 @@ for (var i = 0; i < question.length; i++) {
 }
 document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
 document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
-document.getElementById("personimage").src="../images/mystery_person.jpg";
+document.getElementById("personimage").src="assets/images/mystery_person.jpg";
 document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
 document.querySelector("#wins").innerHTML = "Wins: " + winCount;
 document.querySelector("#losses").innerHTML = "Losses: " + lossCount;	
@@ -92,7 +92,7 @@ var userGuess = event.key;
 									document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
 									if (blankspaceArray.indexOf('_') ===-1) { //evaluate if the user wins 
 										winCount++;
-										document.getElementById("personimage").src="../images/"+question+".jpg";
+										document.getElementById("personimage").src="assets/images/"+question+".jpg";
 									}
 									else {
 										
