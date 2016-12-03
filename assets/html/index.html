@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What's my Name</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Anton|Lobster" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+</head>
+<body>
+		<div class="page-header">
+
+  			<h1 class="Header-text">Do You Know My Name? 
+  				<br>
+  				<p class="subheading">A hangman game that tests your knowledge of your classmates' names!</p>
+  			</h1>
+		</div>
+			<!--Main content area-->
+		<div class="container-fluid main_content">
+			<div class="container">
+	 			<div class="row">
+	 				<div class="center-block">
+	 			 		<button type="button" class="btn btn-primary" id="NewGame">New Game</button>
+	 			 		<button type="button" class="btn btn-primary" id="Reset">Reset</button>
+	 			 	</div>
+	 			</div> <!--end first row-->
+	 			<div class="row GuessingRow">
+	 				<div class="col-md-6 GuessingRowContent">
+	 					<img src="../images/mystery_person.jpg" id="personimage" class="img-responsive " alt="Responsive image">
+	 				</div>
+
+	 				<div class="col-md-6 GuessingRowContent">
+	 					<div class="center-block GuessingArea">
+	 					<p id="game" class="Header-text">Click New Game to Start</p>
+	 					<p id="GuessesRemaining"></p>
+	 					<p id="LettersGuessed"></p>
+	 					<p id="wins"></p>
+	 					<p id="losses"></p>	
+	 					</div>
+	 				</div>
+
+	 			</div>
+	 		</div>	
+		</div>
+			<!-- Footer area-->
+
+		<div class="Footer">
+
+  			<h2 class="FooterText">Game by Igor Kreymer
+
+		</div>
+		
+
+		
+<script type="text/javascript" src="../javascript/game.js"></script>
+</body>
+</html>

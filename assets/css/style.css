@@ -1,0 +1,82 @@
+.page-header {
+	
+	background-image: url("../images/congruent_pentagon.png");
+	height: auto;
+	margin: 0px;
+	padding: 0px;	
+}
+
+.Header-text {
+	margin: 0px;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Anton', sans-serif;
+	font-weight: bold;
+	color: #ba3256;	
+	padding: 20px 0px 0px 0px;
+	letter-spacing: 2px;
+}
+
+.subheading {
+	margin: 0px;
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Lobster', sans-serif;
+	font-weight: bold;
+	color: #1c070c;	
+	padding: 20px 0px 10px 0px;
+	letter-spacing: 2px;
+
+}
+
+.main_content {
+	text-align: center;
+	background-image: url("../images/furley_bg.png");
+
+}
+
+.btn {
+	margin: 20px 20px 0px 0px;
+	width: 100px;
+}
+
+#Reset {
+	background-color: #ba3256;
+	border-color: #ba3256;
+}
+
+.GuessingRow {
+	background-color: #fff;
+	margin: 30px 0px 30px 0px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000;
+}
+
+.mystery_person {
+	margin: 20px 0px 20px 0px;
+}
+
+.GuessingRowContent {
+	padding: 0px;
+		
+
+}
+#game {
+    margin-top: 10px;
+    letter-spacing: 7px;
+}
+
+.Footer {
+	text-align: center;
+	height: 40px;
+	background-image: url("../images/footer_lodyas.png");
+	color: #fff;
+	font-size: 15px;
+	margin: 0px;
+}
+.FooterText {
+	padding-top: 0px;	
+	font-size: 15px;
+	margin: 0px;
+}
