@@ -63,7 +63,7 @@
 
 }
 #game {
-    margin-top: 10px;
+    margin-top: 5px;
     letter-spacing: 7px;
 }
 
@@ -74,9 +74,30 @@
 	color: #fff;
 	font-size: 15px;
 	margin: 0px;
+	position: absolute;
+	bottom:0;
+	width: 100%;
 }
 .FooterText {
 	padding-top: 0px;	
 	font-size: 15px;
 	margin: 0px;
+}
+
+
+.GameStats {
+	font-family: 'Bungee', cursive;
+	margin-top: 5px;
+}
+
+ 
+#EndingMsg {
+	margin: 20px 0px 0px 0px;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Anton', sans-serif;
+	font-weight: bold;
+	color: #ce694a;	
+	
+	letter-spacing: 2px;
 }

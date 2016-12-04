@@ -14,7 +14,7 @@
 	are more than 0 and there are no blanks you win;
 	*/
 
-var questionsArray = ["igor",'jonathan1','boris','asha'] ;
+var questionsArray = ['abanda','alejandra','asha','boris','catherine','chiara','deepika','emily','franco','harrison','igor','jihyun','jonathan1','jonathan2','jonathan3','justin','kalimah','kevin','ksenia','matt','melissa','mike','nalani','nathan','peleke','piniel','rob','simi','steve','theory','thony','wesley'] ;
 var remainingGuesses = 10;
 var blankspaceArray = [];
 var guessesArray = [] ; 
@@ -22,34 +22,35 @@ var	question;
 var winCount=0;
 var lossCount=0;
 
+
 var NewGameFunction = function () {
+ 
  blankspaceArray = [];
  remainingGuesses = 10;
  guessesArray = [] ;
  question = questionsArray[Math.floor(Math.random()*questionsArray.length)]
 
-if (question === 'jonathan1') {
+ 			//Create an if statement to capture several Jonathan's in the class and define string length for them
+if (question === 'jonathan1' || question === 'jonathan2' || question === 'jonathan3') {
 	blankspaceArray = ['_','_','_','_','_','_','_','_'];
-	document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
-	document.getElementById("personimage").src="assets/images/mystery_person.jpg";
-	document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
-	document.querySelector("#wins").innerHTML = "Wins: " + winCount;
-	document.querySelector("#losses").innerHTML = "Losses: " + lossCount;
+RepeatingHtml();
+document.getElementById("personimage").src="assets/images/mystery_person.jpg";
+document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
+document.querySelector("#EndingMsg").innerHTML = "";
 }
 else{
+
+			//Create a loop that 
 for (var i = 0; i < question.length; i++) {
 	
 	var blankspace = '_';
 	
 	blankspaceArray.push (blankspace);	
 }
-document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
-document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
+RepeatingHtml();
 document.getElementById("personimage").src="assets/images/mystery_person.jpg";
-document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
-document.querySelector("#wins").innerHTML = "Wins: " + winCount;
-document.querySelector("#losses").innerHTML = "Losses: " + lossCount;	
-
+document.querySelector("#game").innerHTML = "Who am I?" + "<br>" + blankspaceArray.join("");
+document.querySelector("#EndingMsg").innerHTML = "";
 }};
 
 var Reset = function () {
@@ -58,12 +59,20 @@ var Reset = function () {
 	NewGameFunction();
 }
 
+var RepeatingHtml = function () {
+
+document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
+document.querySelector("#LettersGuessed").innerHTML = "Letters Guessed: " + guessesArray;
+document.querySelector("#wins").innerHTML = "Wins: " + winCount;
+document.querySelector("#losses").innerHTML = "Losses: " + lossCount;	
+};
+
 
 document.onkeyup = function (event) {
-var userGuess = event.key;  
+var userGuessClick = event.key;  
+var userGuess = userGuessClick.toLowerCase();
 		
-
-			//Check that there are still letters to guess and the user still has guesses available
+			//Check that there are still letters to guess and the user still has guesses available;
 	if (blankspaceArray.indexOf('_') !==-1 && remainingGuesses>0) 
 		{
 	     //The function will only do something if the key pressed is a letter of the alphabet
@@ -74,9 +83,17 @@ var userGuess = event.key;
 		      	{		//Check if the guess is correct or not
 				    if (question.indexOf(userGuess) === -1) {
 				    	remainingGuesses--;
+				    	
 				    	if (remainingGuesses === 0) { //loss counter	
 				    		lossCount++;
-
+				    		document.querySelector("#EndingMsg").innerHTML = "You Need More Practice";
+				    		document.getElementById("personimage").src="assets/images/"+question+".jpg";
+				    		if (question === 'jonathan1' || question === 'jonathan2' || question === 'jonathan3') {
+				    			document.querySelector("#game").innerHTML = "jonathan";
+				    		}
+				    		else {
+				    		document.querySelector("#game").innerHTML = question;
+				    		};
 				    	}
 				    	else {
 
@@ -93,6 +110,7 @@ var userGuess = event.key;
 									if (blankspaceArray.indexOf('_') ===-1) { //evaluate if the user wins 
 										winCount++;
 										document.getElementById("personimage").src="assets/images/"+question+".jpg";
+										document.querySelector("#EndingMsg").innerHTML = "You Got It!";
 									}
 									else {
 										
@@ -106,7 +124,7 @@ var userGuess = event.key;
 					guessesArray.push(userGuess);
 				}
 				else {
-					console.log("usedLetter");
+					
 					
 				}; 
 		     }  
@@ -117,18 +135,10 @@ var userGuess = event.key;
  		}
  	else{};  //end of the do loop
 
-document.querySelector("#GuessesRemaining").innerHTML = "Guesses Remaining: " + remainingGuesses;
-document.querySelector("#wins").innerHTML = "Wins: " + winCount;
-document.querySelector("#losses").innerHTML = "Losses: " + lossCount;
-document.querySelector("#LettersGuessed").innerHTML = "LettersGuessed: " + guessesArray;
 
+	
+	RepeatingHtml();
 
-
-console.log(userGuess);
-console.log(guessesArray);
-console.log(winCount);
-console.log(lossCount);
-console.log(remainingGuesses);	
 };
 
 document.getElementById('NewGame').onclick = NewGameFunction;
